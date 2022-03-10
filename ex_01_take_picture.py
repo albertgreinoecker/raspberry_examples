@@ -8,7 +8,7 @@ camera = PiCamera()
 Grundlegende Einstellungen für die Kamera
 Weitere Einstellungen sind unter https://picamera.readthedocs.io/en/release-1.13/api_camera.html zu finden.
 '''
-camera.resolution = (1024, 768)
+#camera.resolution = (1024, 768)
 camera.rotation = 0 # 90, 180, 270 grad
 camera.framerate = 15 # Frames pro Sekunde (FPS)
 '''
