@@ -22,6 +22,6 @@ if __name__ == '__main__':
     client.on_message = on_message # die on_message-Methode soll aufgerfufen werden wenn einen neue Nachricht hereinkommt
     client.on_log = on_log
     client.loop_start()  # loop starten
-    #client.loop_forever() # loop starten in Endlosschleife
+    #client.loop_forever() # loop starten in Endlosschleife (blockiert)
     time.sleep(1000000)
     print("EXIT")
