@@ -14,9 +14,18 @@ def on_message(client, userdata, message):
 def on_log(client, userdata, level, buf):
     print("log: ",buf)
 
+def on_connect(client, userdata, flags, rc, properties=None):
+    if rc == 0: #Wenn der return code 0 ist hat die Verbindung gepasst
+        print("CONNECTION established")
+    else:
+        print("authentication error.")
+
+
 if __name__ == '__main__':
     client = mqtt.Client('test')  # Der Parameter ist die client-ID, diese sollte möglichst eindeutig sein.
-    client.connect('127.0.0.1')   # Im Moment verwenden wir die lokale mosquitto Installation, spaeter durch die IP zu ersetzen
+    client.username_pw_set('albert', 'XXX')
+    client.on_connect = on_connect
+    client.connect('127.0.0.1', port=2222)   # Im Moment verwenden wir die lokale mosquitto Installation, spaeter durch die IP zu ersetzen
 
     client.subscribe("house/light") # Eintragen fuer einen bestimmten Channel
     client.on_message = on_message # die on_message-Methode soll aufgerfufen werden wenn einen neue Nachricht hereinkommt

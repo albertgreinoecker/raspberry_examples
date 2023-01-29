@@ -1,1 +1,3 @@
 paho-mqtt
+Pillow
+get-video-properties

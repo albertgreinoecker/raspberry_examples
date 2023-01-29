@@ -1,4 +1,4 @@
-from picamera import PiCamera
+from picamera import PiCamera # Achtung! Diese Bibliothek gibt es nur am Raspberry
 from time import sleep
 
 camera = PiCamera()
