@@ -10,8 +10,8 @@ import uuid
 # So kann man eine eindeutige ID erzeugen
 uuid4 = uuid.uuid4() # zufällige UUID
 uuid1 = uuid.uuid1() # UUID aus der MAC-Adresse und der Zeit
-client = mqtt.Client(uuid4)
-
+#client = mqtt.Client(uuid4)
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 #client.username_pw_set('albert', 'XXX')
 client.connect('127.0.0.1', port=1883) #Im Moment verwenden wir die lokale mosquitto Installation, spaeter durch die IP zu ersetzen
 
