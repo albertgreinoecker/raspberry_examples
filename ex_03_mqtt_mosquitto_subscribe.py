@@ -23,7 +23,8 @@ def on_connect(client, userdata, flags, rc, properties=None):
 
 if __name__ == '__main__':
     #client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1,  'test')  # DIESE VARIANTE WÄHLEN WENN DER FEHLER MIT WRONG VERISION KOMMT
-    client = mqtt.Client('test')  # Der Parameter ist die client-ID, diese sollte möglichst eindeutig sein.
+    #client = mqtt.Client('test')  # Der Parameter ist die client-ID, diese sollte möglichst eindeutig sein.
+    client =  mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
     #client.username_pw_set('albert', 'XXX')
     client.on_connect = on_connect
     client.connect('127.0.0.1', port=1883)   # Im Moment verwenden wir die lokale mosquitto Installation, spaeter durch die IP zu ersetzen
