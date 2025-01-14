@@ -15,4 +15,4 @@ client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 #client.username_pw_set('albert', 'XXX')
 client.connect('127.0.0.1', port=1883) #Im Moment verwenden wir die lokale mosquitto Installation, spaeter durch die IP zu ersetzen
 
-client.publish("any/topic","ON")  #An den Channel house/light wird die Nachricht "ON" gesendet
+client.publish("house/light","ON")  #An den Channel house/light wird die Nachricht "ON" gesendet
